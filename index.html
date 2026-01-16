@@ -410,5 +410,12 @@ Connect - Project Page</title>
         }
     </script>
     <link rel="stylesheet" href="style.css">
+    <script>
+  // This forces a "ReferenceError" because 'nonExistentFunction' is not defined.
+  // Your window.onerror in config.js will catch this and send it to Azure.
+  setTimeout(() => {
+    nonExistentFunction();
+  }, 2000);
+</script>
 </body>
 </html>
